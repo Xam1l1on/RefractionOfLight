@@ -12,6 +12,8 @@ namespace RefractionOfLight
 {
     public partial class WorkForm : Form
     {
+        Refraction refract = new Refraction();
+        Reflection reflect = new Reflection();
         double angleOfIncidence = 0;
         private double air = 1.00;
         private double glass = 1.61;
@@ -25,16 +27,14 @@ namespace RefractionOfLight
         {
             Application.Exit();
         }
-        Refraction refract = new Refraction();
-        Reflection reflect = new Reflection();
         private void RefractionForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Environment.Exit(0);
         }
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            Pen drawNormal = new Pen(Color.Gray, 2.00f);
-            Pen drawInterface = new Pen(Color.DarkGray, 3.00f);
+            Pen drawNormal = new Pen(Color.Gray, 2.00f); // отрисовка линии Нормали
+            Pen drawInterface = new Pen(Color.DarkGray, 3.00f); // отрисовка линии границы двух сред
 
             var g = e.Graphics;
             g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;

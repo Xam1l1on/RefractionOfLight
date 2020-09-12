@@ -22,7 +22,7 @@ namespace RefractionOfLight
         }
         public float ReflectionYRay(double angleOfInc)
         {
-            float yRefraction = centerY + centerY * (float)Math.Cos(AngleOfReflection(angleOfInc));
+            float yRefraction = centerY - centerY * (float)Math.Cos(AngleOfReflection(angleOfInc));
             return yRefraction;
         }
     }

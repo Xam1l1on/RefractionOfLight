@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WorkForm));
             this.groupBox_MediaOne = new System.Windows.Forms.GroupBox();
             this.radioButton_MediaOneGlass = new System.Windows.Forms.RadioButton();
             this.radioButton_MediaOneOil = new System.Windows.Forms.RadioButton();
@@ -59,9 +58,9 @@
             this.groupBox_MediaOne.Controls.Add(this.radioButton_MediaOneOil);
             this.groupBox_MediaOne.Controls.Add(this.radioButton_MediaOneWater);
             this.groupBox_MediaOne.Controls.Add(this.radioButton_MediaOneAir);
-            this.groupBox_MediaOne.Location = new System.Drawing.Point(886, 32);
+            this.groupBox_MediaOne.Location = new System.Drawing.Point(809, 12);
             this.groupBox_MediaOne.Name = "groupBox_MediaOne";
-            this.groupBox_MediaOne.Size = new System.Drawing.Size(300, 150);
+            this.groupBox_MediaOne.Size = new System.Drawing.Size(248, 150);
             this.groupBox_MediaOne.TabIndex = 0;
             this.groupBox_MediaOne.TabStop = false;
             this.groupBox_MediaOne.Text = "Выбор первой среды";
@@ -117,9 +116,9 @@
             this.groupBox_MediaTwo.Controls.Add(this.radioButton_MediaTwoOil);
             this.groupBox_MediaTwo.Controls.Add(this.radioButton_MediaTwoWater);
             this.groupBox_MediaTwo.Controls.Add(this.radioButton_MediaTwoAir);
-            this.groupBox_MediaTwo.Location = new System.Drawing.Point(886, 212);
+            this.groupBox_MediaTwo.Location = new System.Drawing.Point(809, 168);
             this.groupBox_MediaTwo.Name = "groupBox_MediaTwo";
-            this.groupBox_MediaTwo.Size = new System.Drawing.Size(300, 150);
+            this.groupBox_MediaTwo.Size = new System.Drawing.Size(248, 150);
             this.groupBox_MediaTwo.TabIndex = 1;
             this.groupBox_MediaTwo.TabStop = false;
             this.groupBox_MediaTwo.Text = "Выбор второй среды";
@@ -217,7 +216,7 @@
             // 
             // trackBar1
             // 
-            this.trackBar1.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.trackBar1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.trackBar1.Location = new System.Drawing.Point(25, 12);
             this.trackBar1.Maximum = 90;
             this.trackBar1.Name = "trackBar1";
@@ -233,7 +232,7 @@
             this.buttonExit.BackColor = System.Drawing.Color.Red;
             this.buttonExit.FlatAppearance.BorderSize = 0;
             this.buttonExit.Font = new System.Drawing.Font("Microsoft YaHei UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonExit.Location = new System.Drawing.Point(1086, 560);
+            this.buttonExit.Location = new System.Drawing.Point(839, 454);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(100, 60);
             this.buttonExit.TabIndex = 8;
@@ -245,8 +244,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.ClientSize = new System.Drawing.Size(1073, 584);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.numericUpDown_SinAlpha);
