@@ -58,31 +58,31 @@ namespace RefractionOfLight
                 if (radioButton_MediaTwoAir.Checked == true)
                 {
                     xRefraction = refract.RefractionXRay(air, air, angleOfIncidence);
-                    yRefraction = centerY + centerY * (float)Math.Cos(refract.AngleOfRefraction(air, air, angleOfIncidence));
+                    yRefraction = refract.RefractionYRay(air, air, angleOfIncidence);
                     xReflection = centerX + centerX * (float)Math.Sin(reflect.AngleOfReflection(angleOfIncidence));
                     yReflection = centerY - centerY * (float)Math.Cos(reflect.AngleOfReflection(angleOfIncidence));
                     textBox_AngleOfRefraction.Text = Convert.ToString((refract.AngleOfRefraction(air, air, angleOfIncidence) * 180) / Math.PI);
                 }
                 else if (radioButton_MediaTwoGlass.Checked == true)
                 {
-                    xRefraction = centerX + centerX * (float)Math.Sin(refract.AngleOfRefraction(air, glass, angleOfIncidence));
-                    yRefraction = centerY + centerY * (float)Math.Cos(refract.AngleOfRefraction(air, glass, angleOfIncidence));
+                    xRefraction = refract.RefractionXRay(air, air, angleOfIncidence);
+                    yRefraction = refract.RefractionYRay(air, air, angleOfIncidence);
                     xReflection = centerX + centerX * (float)Math.Sin(reflect.AngleOfReflection(angleOfIncidence));
                     yReflection = centerY - centerY * (float)Math.Cos(reflect.AngleOfReflection(angleOfIncidence));
                     textBox_AngleOfRefraction.Text = Convert.ToString((refract.AngleOfRefraction(air, glass, angleOfIncidence) * 180) / Math.PI);
                 }
                 else if (radioButton_MediaTwoWater.Checked == true)
                 {
-                    xRefraction = centerX + centerX * (float)Math.Sin(refract.AngleOfRefraction(air, water, angleOfIncidence));
-                    yRefraction = centerY + centerY * (float)Math.Cos(refract.AngleOfRefraction(air, water, angleOfIncidence));
+                    xRefraction = refract.RefractionXRay(air, air, angleOfIncidence);
+                    yRefraction = refract.RefractionYRay(air, air, angleOfIncidence);
                     xReflection = centerX + centerX * (float)Math.Sin(reflect.AngleOfReflection(angleOfIncidence));
                     yReflection = centerY - centerY * (float)Math.Cos(reflect.AngleOfReflection(angleOfIncidence));
                     textBox_AngleOfRefraction.Text = Convert.ToString((refract.AngleOfRefraction(air, water, angleOfIncidence) * 180) / Math.PI);
                 }
                 else if (radioButton_MediaTwoOil.Checked == true)
                 {
-                    xRefraction = centerX + centerX * (float)Math.Sin(refract.AngleOfRefraction(air, oil, angleOfIncidence));
-                    yRefraction = centerY + centerY * (float)Math.Cos(refract.AngleOfRefraction(air, oil, angleOfIncidence));
+                    xRefraction = refract.RefractionXRay(air, air, angleOfIncidence);
+                    yRefraction = refract.RefractionYRay(air, air, angleOfIncidence);
                     xReflection = centerX + centerX * (float)Math.Sin(reflect.AngleOfReflection(angleOfIncidence));
                     yReflection = centerY - centerY * (float)Math.Cos(reflect.AngleOfReflection(angleOfIncidence));
                     textBox_AngleOfRefraction.Text = Convert.ToString((refract.AngleOfRefraction(air, oil, angleOfIncidence) * 180) / Math.PI);
@@ -92,32 +92,32 @@ namespace RefractionOfLight
             {
                 if (radioButton_MediaTwoAir.Checked == true)
                 {
-                    xRefraction = centerX + centerX * (float)Math.Sin(refract.AngleOfRefraction(glass, air, angleOfIncidence));
-                    yRefraction = centerY + centerY * (float)Math.Cos(refract.AngleOfRefraction(glass, air, angleOfIncidence));
+                    xRefraction = refract.RefractionXRay(air, air, angleOfIncidence);
+                    yRefraction = refract.RefractionYRay(air, air, angleOfIncidence);
                     xReflection = centerX + centerX * (float)Math.Sin(reflect.AngleOfReflection(angleOfIncidence));
                     yReflection = centerY - centerY * (float)Math.Cos(reflect.AngleOfReflection(angleOfIncidence));
                     textBox_AngleOfRefraction.Text = Convert.ToString((refract.AngleOfRefraction(glass, air, angleOfIncidence) * 180) / Math.PI);
                 }
                 else if (radioButton_MediaTwoGlass.Checked == true)
                 {
-                    xRefraction = centerX + centerX * (float)Math.Sin(refract.AngleOfRefraction(glass, glass, angleOfIncidence));
-                    yRefraction = centerY + centerY * (float)Math.Cos(refract.AngleOfRefraction(glass, glass, angleOfIncidence));
+                    xRefraction = refract.RefractionXRay(air, air, angleOfIncidence);
+                    yRefraction = refract.RefractionYRay(air, air, angleOfIncidence);
                     xReflection = centerX + centerX * (float)Math.Sin(reflect.AngleOfReflection(angleOfIncidence));
                     yReflection = centerY - centerY * (float)Math.Cos(reflect.AngleOfReflection(angleOfIncidence));
                     textBox_AngleOfRefraction.Text = Convert.ToString((refract.AngleOfRefraction(glass, glass, angleOfIncidence) * 180) / Math.PI);
                 }
                 else if (radioButton_MediaTwoWater.Checked == true)
                 {
-                    xRefraction = centerX + centerX * (float)Math.Sin(refract.AngleOfRefraction(glass, water, angleOfIncidence));
-                    yRefraction = centerY + centerY * (float)Math.Cos(refract.AngleOfRefraction(glass, water, angleOfIncidence));
+                    xRefraction = refract.RefractionXRay(air, air, angleOfIncidence);
+                    yRefraction = refract.RefractionYRay(air, air, angleOfIncidence);
                     xReflection = centerX + centerX * (float)Math.Sin(reflect.AngleOfReflection(angleOfIncidence));
                     yReflection = centerY - centerY * (float)Math.Cos(reflect.AngleOfReflection(angleOfIncidence));
                     textBox_AngleOfRefraction.Text = Convert.ToString((refract.AngleOfRefraction(glass, water, angleOfIncidence) * 180) / Math.PI);
                 }
                 else if (radioButton_MediaTwoOil.Checked == true)
                 {
-                    xRefraction = centerX + centerX * (float)Math.Sin(refract.AngleOfRefraction(glass, oil, angleOfIncidence));
-                    yRefraction = centerY + centerY * (float)Math.Cos(refract.AngleOfRefraction(glass, oil, angleOfIncidence));
+                    xRefraction = refract.RefractionXRay(air, air, angleOfIncidence);
+                    yRefraction = refract.RefractionYRay(air, air, angleOfIncidence);
                     xReflection = centerX + centerX * (float)Math.Sin(reflect.AngleOfReflection(angleOfIncidence));
                     yReflection = centerY - centerY * (float)Math.Cos(reflect.AngleOfReflection(angleOfIncidence));
                     textBox_AngleOfRefraction.Text = Convert.ToString((refract.AngleOfRefraction(glass, oil, angleOfIncidence) * 180) / Math.PI);
@@ -127,32 +127,32 @@ namespace RefractionOfLight
             {
                 if (radioButton_MediaTwoAir.Checked == true)
                 {
-                    xRefraction = centerX + centerX * (float)Math.Sin(refract.AngleOfRefraction(water, air, angleOfIncidence));
-                    yRefraction = centerY + centerY * (float)Math.Cos(refract.AngleOfRefraction(water, air, angleOfIncidence));
+                    xRefraction = refract.RefractionXRay(air, air, angleOfIncidence);
+                    yRefraction = refract.RefractionYRay(air, air, angleOfIncidence);
                     xReflection = centerX + centerX * (float)Math.Sin(reflect.AngleOfReflection(angleOfIncidence));
                     yReflection = centerY - centerY * (float)Math.Cos(reflect.AngleOfReflection(angleOfIncidence));
                     textBox_AngleOfRefraction.Text = Convert.ToString((refract.AngleOfRefraction(water, air, angleOfIncidence) * 180) / Math.PI);
                 }
                 else if (radioButton_MediaTwoGlass.Checked == true)
                 {
-                    xRefraction = centerX + centerX * (float)Math.Sin(refract.AngleOfRefraction(water, glass, angleOfIncidence));
-                    yRefraction = centerY + centerY * (float)Math.Cos(refract.AngleOfRefraction(water, glass, angleOfIncidence));
+                    xRefraction = refract.RefractionXRay(air, air, angleOfIncidence);
+                    yRefraction = refract.RefractionYRay(air, air, angleOfIncidence);
                     xReflection = centerX + centerX * (float)Math.Sin(reflect.AngleOfReflection(angleOfIncidence));
                     yReflection = centerY - centerY * (float)Math.Cos(reflect.AngleOfReflection(angleOfIncidence));
                     textBox_AngleOfRefraction.Text = Convert.ToString((refract.AngleOfRefraction(water, glass, angleOfIncidence) * 180) / Math.PI);
                 }
                 else if (radioButton_MediaTwoWater.Checked == true)
                 {
-                    xRefraction = centerX + centerX * (float)Math.Sin(refract.AngleOfRefraction(water, water, angleOfIncidence));
-                    yRefraction = centerY + centerY * (float)Math.Cos(refract.AngleOfRefraction(water, water, angleOfIncidence));
+                    xRefraction = refract.RefractionXRay(air, air, angleOfIncidence);
+                    yRefraction = refract.RefractionYRay(air, air, angleOfIncidence);
                     xReflection = centerX + centerX * (float)Math.Sin(reflect.AngleOfReflection(angleOfIncidence));
                     yReflection = centerY - centerY * (float)Math.Cos(reflect.AngleOfReflection(angleOfIncidence));
                     textBox_AngleOfRefraction.Text = Convert.ToString((refract.AngleOfRefraction(water, water, angleOfIncidence) * 180) / Math.PI);
                 }
                 else if (radioButton_MediaTwoOil.Checked == true)
                 {
-                    xRefraction = centerX + centerX * (float)Math.Sin(refract.AngleOfRefraction(water, oil, angleOfIncidence));
-                    yRefraction = centerY + centerY * (float)Math.Cos(refract.AngleOfRefraction(water, oil, angleOfIncidence));
+                    xRefraction = refract.RefractionXRay(air, air, angleOfIncidence);
+                    yRefraction = refract.RefractionYRay(air, air, angleOfIncidence);
                     xReflection = centerX + centerX * (float)Math.Sin(reflect.AngleOfReflection(angleOfIncidence));
                     yReflection = centerY - centerY * (float)Math.Cos(reflect.AngleOfReflection(angleOfIncidence));
                     textBox_AngleOfRefraction.Text = Convert.ToString((refract.AngleOfRefraction(water, oil, angleOfIncidence) * 180) / Math.PI);
@@ -162,32 +162,32 @@ namespace RefractionOfLight
             {
                 if (radioButton_MediaTwoAir.Checked == true)
                 {
-                    xRefraction = centerX + centerX * (float)Math.Sin(refract.AngleOfRefraction(oil, air, angleOfIncidence));
-                    yRefraction = centerY + centerY * (float)Math.Cos(refract.AngleOfRefraction(oil, air, angleOfIncidence));
+                    xRefraction = refract.RefractionXRay(air, air, angleOfIncidence);
+                    yRefraction = refract.RefractionYRay(air, air, angleOfIncidence);
                     xReflection = centerX + centerX * (float)Math.Sin(reflect.AngleOfReflection(angleOfIncidence));
                     yReflection = centerY - centerY * (float)Math.Cos(reflect.AngleOfReflection(angleOfIncidence));
                     textBox_AngleOfRefraction.Text = Convert.ToString((refract.AngleOfRefraction(oil, air, angleOfIncidence) * 180) / Math.PI);
                 }
                 else if (radioButton_MediaTwoGlass.Checked == true)
                 {
-                    xRefraction = centerX + centerX * (float)Math.Sin(refract.AngleOfRefraction(oil, glass, angleOfIncidence));
-                    yRefraction = centerY + centerY * (float)Math.Cos(refract.AngleOfRefraction(oil, glass, angleOfIncidence));
+                    xRefraction = refract.RefractionXRay(air, air, angleOfIncidence);
+                    yRefraction = refract.RefractionYRay(air, air, angleOfIncidence);
                     xReflection = centerX + centerX * (float)Math.Sin(reflect.AngleOfReflection(angleOfIncidence));
                     yReflection = centerY - centerY * (float)Math.Cos(reflect.AngleOfReflection(angleOfIncidence));
                     textBox_AngleOfRefraction.Text = Convert.ToString((refract.AngleOfRefraction(oil, glass, angleOfIncidence) * 180) / Math.PI);
                 }
                 else if (radioButton_MediaTwoWater.Checked == true)
                 {
-                    xRefraction = centerX + centerX * (float)Math.Sin(refract.AngleOfRefraction(oil, water, angleOfIncidence));
-                    yRefraction = centerY + centerY * (float)Math.Cos(refract.AngleOfRefraction(oil, water, angleOfIncidence));
+                    xRefraction = refract.RefractionXRay(air, air, angleOfIncidence);
+                    yRefraction = refract.RefractionYRay(air, air, angleOfIncidence);
                     xReflection = centerX + centerX * (float)Math.Sin(reflect.AngleOfReflection(angleOfIncidence));
                     yReflection = centerY - centerY * (float)Math.Cos(reflect.AngleOfReflection(angleOfIncidence));
                     textBox_AngleOfRefraction.Text = Convert.ToString((refract.AngleOfRefraction(oil, water, angleOfIncidence) * 180) / Math.PI);
                 }
                 else if (radioButton_MediaTwoOil.Checked == true)
                 {
-                    xRefraction = centerX + centerX * (float)Math.Sin(refract.AngleOfRefraction(oil, oil, angleOfIncidence));
-                    yRefraction = centerY + centerY * (float)Math.Cos(refract.AngleOfRefraction(oil, oil, angleOfIncidence));
+                    xRefraction = refract.RefractionXRay(air, air, angleOfIncidence);
+                    yRefraction = refract.RefractionYRay(air, air, angleOfIncidence);
                     xReflection = centerX + centerX * (float)Math.Sin(reflect.AngleOfReflection(angleOfIncidence));
                     yReflection = centerY - centerY * (float)Math.Cos(reflect.AngleOfReflection(angleOfIncidence));
                     textBox_AngleOfRefraction.Text = Convert.ToString((refract.AngleOfRefraction(oil, oil, angleOfIncidence) * 180) / Math.PI);
