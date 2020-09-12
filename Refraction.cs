@@ -10,6 +10,8 @@ namespace RefractionOfLight
     {
         private double angleOfRefraction;
         private double indicesOfRefraction;
+        int centerX = 350;
+        int centerY = 250;
 
         public double AngleOfRefraction(double oneMedia, double twoMedia, double angleOfInc)
         {
@@ -33,6 +35,16 @@ namespace RefractionOfLight
                     angleOfRefraction = Math.Sin(angleOfInc) * indicesOfRefraction;
             }
             return angleOfRefraction;
+        }
+        public float RefractionXRay(double oneMedia, double twoMedia, double angleOfInc)
+        {
+            float xRefraction = centerX + centerX * (float)Math.Sin(AngleOfRefraction(oneMedia, twoMedia, angleOfInc));
+            return xRefraction; 
+        }
+        public float RefractionYRay(double oneMedia, double twoMedia, double angleOfInc)
+        {
+            float yRefraction = centerY + centerY * (float)Math.Cos(AngleOfRefraction(oneMedia, twoMedia, angleOfInc));
+            return yRefraction;
         }
     }
 }

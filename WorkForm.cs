@@ -57,7 +57,7 @@ namespace RefractionOfLight
             {
                 if (radioButton_MediaTwoAir.Checked == true)
                 {
-                    xRefraction = centerX + centerX * (float)Math.Sin(refract.AngleOfRefraction(air, air, angleOfIncidence));
+                    xRefraction = refract.RefractionXRay(air, air, angleOfIncidence);
                     yRefraction = centerY + centerY * (float)Math.Cos(refract.AngleOfRefraction(air, air, angleOfIncidence));
                     xReflection = centerX + centerX * (float)Math.Sin(reflect.AngleOfReflection(angleOfIncidence));
                     yReflection = centerY - centerY * (float)Math.Cos(reflect.AngleOfReflection(angleOfIncidence));
