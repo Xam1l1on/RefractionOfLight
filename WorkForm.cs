@@ -50,25 +50,24 @@ namespace RefractionOfLight
             var xReflection = 1.00f;
             var yReflection = 1.00f;
 
-            g.DrawLine(Pens.Blue, centerX, centerY, x, y);
+            g.DrawLine(Pens.Blue, refract.CenterX, refract.CenterY, x, y);
             g.DrawLine(Pens.LightGray, 0, centerY, 700, centerY);
-
             if (radioButton_MediaOneAir.Checked == true)
             {
                 if (radioButton_MediaTwoAir.Checked == true)
                 {
                     xRefraction = refract.RefractionXRay(air, air, angleOfIncidence);
                     yRefraction = refract.RefractionYRay(air, air, angleOfIncidence);
-                    xReflection = centerX + centerX * (float)Math.Sin(reflect.AngleOfReflection(angleOfIncidence));
-                    yReflection = centerY - centerY * (float)Math.Cos(reflect.AngleOfReflection(angleOfIncidence));
-                    textBox_AngleOfRefraction.Text = Convert.ToString((refract.AngleOfRefraction(air, air, angleOfIncidence) * 180) / Math.PI);
+                    xReflection = reflect.ReflectionXRay(angleOfIncidence);
+                    yReflection = reflect.ReflectionYRay(angleOfIncidence);
+                    textBox_AngleOfRefraction.Text = refract.ConvertAngleOfRefraction(air, air, angleOfIncidence);
                 }
                 else if (radioButton_MediaTwoGlass.Checked == true)
                 {
-                    xRefraction = refract.RefractionXRay(air, air, angleOfIncidence);
-                    yRefraction = refract.RefractionYRay(air, air, angleOfIncidence);
-                    xReflection = centerX + centerX * (float)Math.Sin(reflect.AngleOfReflection(angleOfIncidence));
-                    yReflection = centerY - centerY * (float)Math.Cos(reflect.AngleOfReflection(angleOfIncidence));
+                    xRefraction = refract.RefractionXRay(air, glass, angleOfIncidence);
+                    yRefraction = refract.RefractionYRay(air, glass, angleOfIncidence);
+                    xReflection = reflect.ReflectionXRay(angleOfIncidence);
+                    yReflection = reflect.ReflectionYRay(angleOfIncidence);
                     textBox_AngleOfRefraction.Text = Convert.ToString((refract.AngleOfRefraction(air, glass, angleOfIncidence) * 180) / Math.PI);
                 }
                 else if (radioButton_MediaTwoWater.Checked == true)
@@ -92,16 +91,16 @@ namespace RefractionOfLight
             {
                 if (radioButton_MediaTwoAir.Checked == true)
                 {
-                    xRefraction = refract.RefractionXRay(air, air, angleOfIncidence);
-                    yRefraction = refract.RefractionYRay(air, air, angleOfIncidence);
+                    xRefraction = refract.RefractionXRay(glass, air, angleOfIncidence);
+                    yRefraction = refract.RefractionYRay(glass, air, angleOfIncidence);
                     xReflection = centerX + centerX * (float)Math.Sin(reflect.AngleOfReflection(angleOfIncidence));
                     yReflection = centerY - centerY * (float)Math.Cos(reflect.AngleOfReflection(angleOfIncidence));
                     textBox_AngleOfRefraction.Text = Convert.ToString((refract.AngleOfRefraction(glass, air, angleOfIncidence) * 180) / Math.PI);
                 }
                 else if (radioButton_MediaTwoGlass.Checked == true)
                 {
-                    xRefraction = refract.RefractionXRay(air, air, angleOfIncidence);
-                    yRefraction = refract.RefractionYRay(air, air, angleOfIncidence);
+                    xRefraction = refract.RefractionXRay(glass, glass, angleOfIncidence);
+                    yRefraction = refract.RefractionYRay(glass, glass, angleOfIncidence);
                     xReflection = centerX + centerX * (float)Math.Sin(reflect.AngleOfReflection(angleOfIncidence));
                     yReflection = centerY - centerY * (float)Math.Cos(reflect.AngleOfReflection(angleOfIncidence));
                     textBox_AngleOfRefraction.Text = Convert.ToString((refract.AngleOfRefraction(glass, glass, angleOfIncidence) * 180) / Math.PI);

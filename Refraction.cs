@@ -6,44 +6,50 @@ using System.Threading.Tasks;
 
 namespace RefractionOfLight
 {
+    //public delegate float XYRefraction
     class Refraction
     {
-        private double angleOfRefraction;
-        private double indicesOfRefraction;
-        int centerX = 350;
-        int centerY = 250;
+        public double AOfRefr { get; set; }
+        public double IOfRefr { get; set; }
+        public int CenterX { get; set; } = 350;
+        public int CenterY { get; set; } = 250;
 
         public double AngleOfRefraction(double oneMedia, double twoMedia, double angleOfInc)
         {
-            indicesOfRefraction = oneMedia / twoMedia;
+            IOfRefr = oneMedia / twoMedia;
             if (oneMedia == twoMedia)
             {
-                angleOfRefraction = angleOfInc;
+                AOfRefr = angleOfInc;
             }
             else if (oneMedia < twoMedia)
             {
-                angleOfRefraction = Math.Sin(angleOfInc) * indicesOfRefraction;
+                AOfRefr = Math.Sin(angleOfInc) * IOfRefr;
             }
             else if (oneMedia > twoMedia)
             {
                 double totalIncides = twoMedia / oneMedia;
                 if (angleOfInc > Math.Asin(totalIncides))
                 {
-                    angleOfRefraction = 0;
+                    AOfRefr = 0;
                 }
                 else
-                    angleOfRefraction = Math.Sin(angleOfInc) * indicesOfRefraction;
+                    AOfRefr = Math.Sin(angleOfInc) * IOfRefr;
             }
-            return angleOfRefraction;
+            return AOfRefr;
+        }
+        public string ConvertAngleOfRefraction(double oneMedia, double twoMedia, double angleOfInc)
+        {
+            string convertAngleOfRefraction = Convert.ToString(AngleOfRefraction(oneMedia, twoMedia, angleOfInc) * 180 / Math.PI);
+            return convertAngleOfRefraction;
         }
         public float RefractionXRay(double oneMedia, double twoMedia, double angleOfInc)
         {
-            float xRefraction = centerX + centerX * (float)Math.Sin(AngleOfRefraction(oneMedia, twoMedia, angleOfInc));
+            float xRefraction = CenterX + CenterX * (float)Math.Sin(AngleOfRefraction(oneMedia, twoMedia, angleOfInc));
             return xRefraction; 
         }
         public float RefractionYRay(double oneMedia, double twoMedia, double angleOfInc)
         {
-            float yRefraction = centerY + centerY * (float)Math.Cos(AngleOfRefraction(oneMedia, twoMedia, angleOfInc));
+            float yRefraction = CenterY + CenterY * (float)Math.Cos(AngleOfRefraction(oneMedia, twoMedia, angleOfInc));
             return yRefraction;
         }
     }
