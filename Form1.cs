@@ -16,5 +16,15 @@ namespace RefractionOfLight
         {
             InitializeComponent();
         }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            WorkForm wForm = new WorkForm();
+            this.Hide();
+            wForm.Show();
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
