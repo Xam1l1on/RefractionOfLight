@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace RefractionOfLight
 {
-    //public delegate float XYRefraction
     class Refraction
     {
         public double AOfRefr { get; set; }

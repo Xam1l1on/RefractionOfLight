@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WorkForm));
             this.groupBox_MediaOne = new System.Windows.Forms.GroupBox();
             this.radioButton_MediaOneGlass = new System.Windows.Forms.RadioButton();
             this.radioButton_MediaOneOil = new System.Windows.Forms.RadioButton();
@@ -53,6 +54,7 @@
             // 
             // groupBox_MediaOne
             // 
+            this.groupBox_MediaOne.BackColor = System.Drawing.Color.Transparent;
             this.groupBox_MediaOne.Controls.Add(this.radioButton_MediaOneGlass);
             this.groupBox_MediaOne.Controls.Add(this.radioButton_MediaOneOil);
             this.groupBox_MediaOne.Controls.Add(this.radioButton_MediaOneWater);
@@ -110,6 +112,7 @@
             // 
             // groupBox_MediaTwo
             // 
+            this.groupBox_MediaTwo.BackColor = System.Drawing.Color.Transparent;
             this.groupBox_MediaTwo.Controls.Add(this.radioButton_MediaTwoGlass);
             this.groupBox_MediaTwo.Controls.Add(this.radioButton_MediaTwoOil);
             this.groupBox_MediaTwo.Controls.Add(this.radioButton_MediaTwoWater);
@@ -167,6 +170,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.textBox_AngleOfRefraction);
             this.panel1.Location = new System.Drawing.Point(103, 12);
             this.panel1.Name = "panel1";
@@ -213,6 +217,7 @@
             // 
             // trackBar1
             // 
+            this.trackBar1.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.trackBar1.Location = new System.Drawing.Point(25, 12);
             this.trackBar1.Maximum = 90;
             this.trackBar1.Name = "trackBar1";
@@ -236,10 +241,11 @@
             this.buttonExit.UseVisualStyleBackColor = false;
             this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
-            // RefractionForm
+            // WorkForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.trackBar1);
@@ -249,7 +255,7 @@
             this.Controls.Add(this.groupBox_MediaTwo);
             this.Controls.Add(this.groupBox_MediaOne);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "RefractionForm";
+            this.Name = "WorkForm";
             this.Text = "Преломление света";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RefractionForm_FormClosed);
             this.groupBox_MediaOne.ResumeLayout(false);
