@@ -16,13 +16,17 @@ namespace RefractionOfLight
         {
             InitializeComponent();
         }
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) //Кнопка перехода на форму "WorkForm"
         {
             WorkForm wForm = new WorkForm();
             this.Hide();
             wForm.Show();
         }
-        private void button2_Click(object sender, EventArgs e)
+        private void AboutRefOfLightButton_Click(object sender, EventArgs e) //Кнопка вызова справки о явлении преломления и явлении отражения 
+        {
+            System.Diagnostics.Process.Start("https://online.mephi.ru/courses/physics/optics/data/course/3/3.2.html");
+        }
+        private void Exitbutton_Click(object sender, EventArgs e) //Кнопка выхода из прошраммы.
         {
             Application.Exit();
         }

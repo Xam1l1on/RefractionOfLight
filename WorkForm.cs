@@ -33,13 +33,14 @@ namespace RefractionOfLight
         }
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            Pen drawNormal = new Pen(Color.Gray, 2.00f); // отрисовка линии Нормали
-            Pen drawInterface = new Pen(Color.DarkGray, 3.00f); // отрисовка линии границы двух сред
+            Pen drawNormal = new Pen(Color.Gray, 2.00f); // Цвет и итолщина линии нормали
+            e.Graphics.DrawLine(drawNormal, refract.CenterX, 0, refract.CenterX, 500); // отрисовка линии Нормали
+            Pen drawInterface = new Pen(Color.DarkGray, 3.00f); // Цвет и  толщина линии границы двух сред
+            e.Graphics.DrawLine(drawInterface, 0, refract.CenterY, 700, refract.CenterY); // отрисовка линии границы двух сред
 
-            var g = e.Graphics;
-            g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            g.DrawLine(drawNormal, refract.CenterX, 0, refract.CenterX, 500);
-            g.DrawLine(drawInterface, 0, refract.CenterY, 700, refract.CenterY);
+            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            
+            
             var x = refract.CenterX - refract.CenterX * (float)Math.Sin(angleOfIncidence);
             var y = refract.CenterY - refract.CenterY * (float)Math.Cos(angleOfIncidence);
             var xRefraction = 1.00f;
@@ -47,8 +48,7 @@ namespace RefractionOfLight
             var xReflection = 1.00f;
             var yReflection = 1.00f;
 
-            g.DrawLine(Pens.Blue, refract.CenterX, refract.CenterY, x, y);
-            g.DrawLine(Pens.LightGray, 0, refract.CenterY, 700, refract.CenterY);
+            e.Graphics.DrawLine(Pens.Blue, refract.CenterX, refract.CenterY, x, y); // Линия отрисовки луча падения
             if (radioButton_MediaOneAir.Checked == true)
             {
                 if (radioButton_MediaTwoAir.Checked == true)
@@ -158,11 +158,11 @@ namespace RefractionOfLight
             {
                 if (radioButton_MediaTwoAir.Checked == true)
                 {
-                    xRefraction = refract.RefractionXRay(oil, oil, angleOfIncidence);
-                    yRefraction = refract.RefractionYRay(oil, oil, angleOfIncidence);
+                    xRefraction = refract.RefractionXRay(oil, air, angleOfIncidence);
+                    yRefraction = refract.RefractionYRay(oil, air, angleOfIncidence);
                     xReflection = reflect.ReflectionXRay(angleOfIncidence);
                     yReflection = reflect.ReflectionYRay(angleOfIncidence);
-                    textBox_AngleOfRefraction.Text = refract.ConvertAngleOfRefraction(oil, oil, angleOfIncidence);
+                    textBox_AngleOfRefraction.Text = refract.ConvertAngleOfRefraction(oil, air, angleOfIncidence);
                 }
                 else if (radioButton_MediaTwoGlass.Checked == true)
                 {
@@ -189,8 +189,8 @@ namespace RefractionOfLight
                     textBox_AngleOfRefraction.Text = refract.ConvertAngleOfRefraction(oil, oil, angleOfIncidence);
                 }
             }
-            g.DrawLine(Pens.Green, refract.CenterX, refract.CenterY, xRefraction, yRefraction);
-            g.DrawLine(Pens.LightSteelBlue, refract.CenterX, refract.CenterY, xReflection, yReflection);
+            e.Graphics.DrawLine(Pens.Green, refract.CenterX, refract.CenterY, xRefraction, yRefraction);
+            e.Graphics.DrawLine(Pens.LightSteelBlue, refract.CenterX, refract.CenterY, xReflection, yReflection);
         }
 
         private void trackBar1_Scroll(object sender, EventArgs e)

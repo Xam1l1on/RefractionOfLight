@@ -17,7 +17,7 @@ namespace RefractionOfLight
         public double AngleOfRefraction(double oneMedia, double twoMedia, double angleOfInc) // Метод высчитвывающий угол преломления света(IOfRefr)
         {
             IOfRefr = oneMedia / twoMedia;
-            if (oneMedia * twoMedia == 1)
+            if (oneMedia == twoMedia)
             {
                 AOfRefr = angleOfInc;
             }
@@ -44,13 +44,13 @@ namespace RefractionOfLight
         }
         public float RefractionXRay(double oneMedia, double twoMedia, double angleOfInc) // Метод просчитывает положение точки по ширине  
         {
-            float xRefraction = CenterX + CenterX * (float)Math.Sin(AngleOfRefraction(oneMedia, twoMedia, angleOfInc));
-            return xRefraction; 
+            float x = CenterX + CenterX * (float)Math.Sin(AngleOfRefraction(oneMedia, twoMedia, angleOfInc));
+            return x; 
         }
         public float RefractionYRay(double oneMedia, double twoMedia, double angleOfInc) // Метод просчитывает положение точки по высоте
         {
-            float yRefraction = CenterY + CenterY * (float)Math.Cos(AngleOfRefraction(oneMedia, twoMedia, angleOfInc));
-            return yRefraction;
+            float y = CenterY + CenterY * (float)Math.Cos(AngleOfRefraction(oneMedia, twoMedia, angleOfInc));
+            return y;
         }
     }
 }
